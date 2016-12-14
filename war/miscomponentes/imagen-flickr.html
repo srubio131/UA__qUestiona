@@ -1,0 +1,28 @@
+<link rel="import" href="./encabezado-cuestionario.html">
+
+<polymer-element name="imagen-flickr" attributes="tema url">
+    <script>
+        Polymer({
+            attached: function () {
+                var componente = this;
+                var apikey = "f73930bf77b379acb3f510e7d508d3f6";
+                var url_photos = "https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=" +
+                                  apikey + "&text=" + componente.tema + "&format=json&per_page=10&media=photos&sort=relevance&jsoncallback=?";
+
+                $.getJSON(url_photos, function(response){
+                    if(response.stat === "ok" && response.photos.total > 0) 
+                    {
+                        var id_image = response.photos.photo[0].id;
+                        var url_image = "https://api.flickr.com/services/rest/?method=flickr.photos.getSizes&api_key="
+                                        + apikey + "&photo_id=" + id_image + "&format=json&jsoncallback=?";
+
+                        $.getJSON(url_image, function(response){
+                            componente.url = response.sizes.size[0].source;
+                        });
+                    }
+                    else       
+                        componente.url = "http://eoimages.gsfc.nasa.gov/images/imagerecords/57000/57723/globe_east_540.jpg";            
+                });
+        }});
+    </script>
+</polymer-element>

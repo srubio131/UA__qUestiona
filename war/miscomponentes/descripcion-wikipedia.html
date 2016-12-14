@@ -1,0 +1,21 @@
+<link rel="import" href="./encabezado-cuestionario.html">
+
+<polymer-element name="descripcion-wikipedia" attributes="tema descripcion">
+    <script>
+        Polymer({
+            attached: function () {
+                var componente = this;
+                var url = "http://es.wikipedia.org/w/api.php?format=json&action=query&prop=extracts&exintro&explaintext&continue&titles=" +
+                        componente.tema  + "&callback=?";
+                    
+                $.getJSON(url, function(data) {
+
+                    $.each(data.query.pages, function(index, idpag) {
+                        if(typeof(idpag.extract) !== 'undefined')   
+                            componente.descripcion = idpag.extract;
+                    });
+                });
+            }
+        });
+    </script>
+</polymer-element>

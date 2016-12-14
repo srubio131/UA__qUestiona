@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xmlns="http://java.sun.com/xml/ns/javaee"
+xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+xsi:schemaLocation="http://java.sun.com/xml/ns/javaee
+http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
+	<servlet>
+		<servlet-name>Main</servlet-name>
+		<servlet-class>dai.servlet.MainServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>Main</servlet-name>
+		<url-pattern>/main</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>NuevoCuestionario</servlet-name>
+		<servlet-class>dai.servlet.NuevoCuestionario</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>NuevoCuestionario</servlet-name>
+		<url-pattern>/nuevocuestionario</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>BorraCuestionario</servlet-name>
+		<servlet-class>dai.servlet.BorraCuestionario</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>BorraCuestionario</servlet-name>
+		<url-pattern>/borracuestionario</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>ListaCuestionarios</servlet-name>
+		<servlet-class>dai.servlet.ListaCuestionarios</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ListaCuestionarios</servlet-name>
+		<url-pattern>/listacuestionarios</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>NuevaPregunta</servlet-name>
+		<servlet-class>dai.servlet.NuevaPregunta</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>NuevaPregunta</servlet-name>
+		<url-pattern>/nuevapregunta</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>BorraPregunta</servlet-name>
+		<servlet-class>dai.servlet.BorraPregunta</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>BorraPregunta</servlet-name>
+		<url-pattern>/borrapregunta</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>ListaPreguntas</servlet-name>
+		<servlet-class>dai.servlet.ListaPreguntas</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ListaPreguntas</servlet-name>
+		<url-pattern>/listapreguntas</url-pattern>
+	</servlet-mapping>
+	<welcome-file-list>
+		<welcome-file>Main</welcome-file>
+	</welcome-file-list>
+</web-app>

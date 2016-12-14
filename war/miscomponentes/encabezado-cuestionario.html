@@ -1,0 +1,39 @@
+<link rel="import" href="../components/polymer/polymer.html">
+<link rel="import" href="./descripcion-wikipedia.html">
+<link rel="import" href="./imagen-flickr.html">
+
+<polymer-element name="encabezado-cuestionario" attributes="tema">
+    <template>
+        <style>            
+            h2 {
+                font-weight: bold;
+                font-size: 25px;
+            }
+            img {
+                vertical-align: text-top;
+                width: 50px;
+                height: 50px;
+                margin-right: 10px;
+                border: 1px solid lightgray;
+            }
+            .wiki {
+                font-size: 90%;
+            }
+        </style>
+        
+        <h2>
+            <imagen-flickr tema="{{tema}}" url="{{url}}">
+                <img src="{{url}}" alt="Fotografía de {{tema}}">
+            </imagen-flickr>
+            Cuestionario sobre {{tema}}        
+        </h2>
+        <descripcion-wikipedia tema="{{tema}}" descripcion="{{descripcion}}">
+            <div class="wiki">{{descripcion}}</div>
+        </descripcion-wikipedia>        
+        
+    </template>
+    <script>
+        Polymer({});
+    </script>
+</polymer-element>
+
